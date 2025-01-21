@@ -65,7 +65,7 @@
 
 .actionItem {
   font-size: 1.125rem;
-  color: var(--base-text);
+  color: var(--text-lighter);
 }
 
 .screenshots {
@@ -117,17 +117,14 @@
   }
 
   .actionList {
-    align-items: center;
-    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 0.5rem;
+    gap: 0.5rem;
   }
 
   .screenshots {
-    flex-direction: column;
-  }
-
-  .screenshot1,
-  .screenshot2,
-  .screenshot3 {
-    transform: scale(1);
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }

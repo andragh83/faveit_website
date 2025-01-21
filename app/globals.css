@@ -4,23 +4,29 @@
 
 :root {
   --background: #ffffff;
+  --background_03: rgba(255, 255, 255, 0.3);
+  --background_05: rgba(255, 255, 255, 0.5);
   --base-text: #343434;
   --text-lighter: #616161;
   --primary: #ddfae3;
   --primary-dark: #c8f9d2;
   --primary-light: #eefdf1;
   --primary-text: #7dd28f;
+  --error: #ef4444;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1a1a1a;
+    --background_03: rgba(52, 52, 52, 0.3);
+    --background_05: rgba(52, 52, 52, 0.5);
     --base-text: #e5e5e5;
     --text-lighter: #b3b3b3;
     --primary: #ddfae3;
     --primary-dark: #c8f9d2;
     --primary-light: #2a3c2d;
     --primary-text: #7dd28f;
+    --error: #ef4444;
   }
 }
 

@@ -10,6 +10,8 @@ import {
   wishlistFeaturesData,
 } from "@/components/localData/featuresData";
 import Feature from "@/components/pageSections/feature";
+import DeveloperSection from "@/components/pageSections/developer";
+import FormSection from "@/components/pageSections/form";
 
 export default function Home() {
   return (
@@ -94,6 +96,11 @@ export default function Home() {
           hasBackground={i % 2 === 0 ? false : true}
         />
       ))}
+      <DeveloperSection />
+      <FormSection />
+      <div className="flex items-center justify-center py-6 text-sm text-textLighter">
+        © FaveIT 2025
+      </div>
     </div>
   );
 }
