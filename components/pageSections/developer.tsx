@@ -19,19 +19,18 @@ const DeveloperSection: FC = ({}) => {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-baseText">
-          Hi! I'm Andra
+          {"Hi! I'm Andra"}
         </h2>
         <div className="flex flex-col gap-4 mb-8 max-w-xl">
           <p className="text-lg md:text-xl text-textLighter ">
-            Thank you for being here and checking out my project! I've created
-            FaveIT to fill a need that I had, to use it myself and I hope you
-            will find a use for it too!
+            {
+              "Thank you for being here and checking out my project! I've created FaveIT to fill a need that I had, to use it myself and I hope you will find a use for it too!"
+            }
           </p>
           <p className="text-md md:text-lg text-textLighter">
-            I have always struggled with choosing what to get for loved ones,
-            friends and anyone really. And for some time now I’ve became
-            convinced that technology could easily solve this problem. Hope
-            you'll enjoy using FaveIT!
+            {
+              "I have always struggled with choosing what to get for loved ones, friends and anyone really. And for some time now I’ve became convinced that technology could easily solve this problem. Hope you'll enjoy using FaveIT!"
+            }
           </p>
         </div>
 

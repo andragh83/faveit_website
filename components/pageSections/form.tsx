@@ -16,7 +16,7 @@ const FormSection: FC = () => {
   const [error, setError] = useState("");
   const [inputError, setInputError] = useState<string | undefined>(undefined);
 
-  const subscribe = async (emai: string) => {
+  const subscribe = async () => {
     const response = await fetch("/api/subscribe", {
       method: "POST",
       headers: {
@@ -44,11 +44,12 @@ const FormSection: FC = () => {
       setIsLoading(true);
 
       try {
-        const { status } = await subscribe(email);
+        const { status } = await subscribe();
         setIsLoading(false);
         setIsSubscribed(status === "success" ? true : false);
       } catch (error) {
         setError("An error occurred. Please try again.");
+        console.error(error);
         setIsLoading(false);
       }
     } else {
@@ -115,8 +116,9 @@ const FormSection: FC = () => {
               Stay Updated
             </h2>
             <p className="text-md md:text-lg text-textLighter mb-1 max-w-lg">
-              Subscribe below if you'd like to be notified when we launch
-              FaveIT.
+              {
+                "Subscribe below if you'd like to be notified when we launch FaveIT."
+              }
             </p>
             <p className="text-md md:text-lg text-textLighter mb-8 max-w-xl">
               No spam. We promise!
