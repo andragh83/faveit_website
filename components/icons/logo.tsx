@@ -1,10 +1,16 @@
 import * as React from "react";
 
-function LightBgLogo({ className }: { className?: string }) {
+function LightBgLogo({
+  className,
+  size,
+}: {
+  className?: string;
+  size?: number;
+}) {
   return (
     <svg
-      width={177}
-      height={80}
+      width={size ?? 177}
+      height={size ? size * (80 / 177) : 80}
       viewBox="0 0 177 80"
       fill="none"
       className={className}

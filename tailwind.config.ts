@@ -17,6 +17,7 @@ export default {
         primaryText: "var(--primary-text)",
         textLighter: "var(--text-lighter)",
         baseText: "var(--base-text)",
+        primaryLighter: "var(--primary-lighter)",
       },
     },
   },

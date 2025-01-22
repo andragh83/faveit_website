@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./Feature.module.css";
 import { generateIcon } from "../icons";
 import { useEffect, useRef } from "react";
+import CheckCircle from "../icons/checkCircle";
 
 interface FeatureItem {
   title: string;
@@ -67,6 +68,9 @@ export default function Feature({
           <ul className={styles.actionList}>
             {feature.actions.map((action, index) => (
               <li key={index} className={styles.actionItem}>
+                <div className="min-w-6">
+                  <CheckCircle color="var(--primary-dark)" />
+                </div>
                 {action}
               </li>
             ))}

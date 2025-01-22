@@ -11,6 +11,7 @@
   --primary: #ddfae3;
   --primary-dark: #c8f9d2;
   --primary-light: #eefdf1;
+  --primary-lighter: #f5fdf7;
   --primary-text: #7dd28f;
   --error: #ef4444;
 }
@@ -25,6 +26,7 @@
     --primary: #ddfae3;
     --primary-dark: #c8f9d2;
     --primary-light: #2a3c2d;
+    --primary-lighter: #202e22;
     --primary-text: #7dd28f;
     --error: #ef4444;
   }

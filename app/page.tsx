@@ -1,5 +1,7 @@
-import Logo from "@/components/icons/logo";
-import Link from "next/link";
+"use client";
+
+import DeveloperSection from "@/components/pageSections/developer";
+import FormSection from "@/components/pageSections/form";
 import TopGrid from "@/components/pageSections/topGrid";
 import Pains from "@/components/pageSections/pains";
 import SectionTitle from "@/components/sectionElements/title";
@@ -10,47 +12,17 @@ import {
   wishlistFeaturesData,
 } from "@/components/localData/featuresData";
 import Feature from "@/components/pageSections/feature";
-import DeveloperSection from "@/components/pageSections/developer";
-import FormSection from "@/components/pageSections/form";
+import Navigation from "@/components/navigation/nav";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="relative h-screen overflow-x-hidden">
+    <div id="top-page" className="relative overflow-x-hidden">
       <TopGrid />
-
-      {/* Navigation */}
-      <div className="absolute top-2 md:top-8 left-0 right-0 z-10">
-        <nav className="max-w-4xl mx-auto flex gap-4 md:gap-8 items-center justify-center px-4">
-          <Link
-            className="uppercase text-[#343434] dark:text-white hover:opacity-70 transition-opacity text-xs md:text-base"
-            href="/"
-          >
-            Wishlists
-          </Link>
-          <Link
-            className="uppercase text-[#343434] dark:text-white hover:opacity-70 transition-opacity text-xs md:text-base"
-            href="/about"
-          >
-            Give
-          </Link>
-          <Logo className="scale-75 md:scale-100" />
-          <Link
-            className="uppercase text-[#343434] dark:text-white hover:opacity-70 transition-opacity text-xs md:text-base"
-            href="/contact"
-          >
-            Dev
-          </Link>
-          <Link
-            className="uppercase text-[#343434] dark:text-white hover:opacity-70 transition-opacity text-xs md:text-base"
-            href="/contact"
-          >
-            Contact
-          </Link>
-        </nav>
-      </div>
+      <Navigation />
 
       {/* Hero Content */}
-      <div className="absolute z-10 top-0 bottom-0 left-0 right-0 flex items-center justify-center pointer-events-none">
+      <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none">
         <div className="max-w-2xl text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#343434] dark:text-white">
             Create Your Perfect Gift Registry
@@ -70,34 +42,42 @@ export default function Home() {
         </div>
       </div>
       <Pains />
-      <SectionTitle
-        title="Keep all your wishlists in one place."
-        image={wishlists}
-        imageAlt="Wishlists"
-      />
-      {wishlistFeaturesData.map((feature, i) => (
-        <Feature
-          key={feature.title}
-          feature={feature}
-          textPosition={i % 2 === 0 ? "left" : "right"}
-          hasBackground={i % 2 === 0 ? false : true}
+      <div id="wishlists">
+        <SectionTitle
+          title="Keep all your wishlists in one place."
+          image={wishlists}
+          imageAlt="Wishlists"
         />
-      ))}
-      <SectionTitle
-        title="Find the perfect gift for your friends and loved ones!"
-        image={gifts}
-        imageAlt="Gifts"
-      />
-      {giftsFeaturesData.map((feature, i) => (
-        <Feature
-          key={feature.title}
-          feature={feature}
-          textPosition={i % 2 === 0 ? "left" : "right"}
-          hasBackground={i % 2 === 0 ? false : true}
+        {wishlistFeaturesData.map((feature, i) => (
+          <Feature
+            key={feature.title}
+            feature={feature}
+            textPosition={i % 2 === 0 ? "left" : "right"}
+            hasBackground={i % 2 === 0 ? false : true}
+          />
+        ))}
+      </div>
+      <div id="gifts">
+        <SectionTitle
+          title="Find the perfect gift for your friends and loved ones!"
+          image={gifts}
+          imageAlt="Gifts"
         />
-      ))}
-      <DeveloperSection />
-      <FormSection />
+        {giftsFeaturesData.map((feature, i) => (
+          <Feature
+            key={feature.title}
+            feature={feature}
+            textPosition={i % 2 === 0 ? "left" : "right"}
+            hasBackground={i % 2 === 0 ? false : true}
+          />
+        ))}
+      </div>
+      <div id="dev">
+        <DeveloperSection />
+      </div>
+      <div id="contact">
+        <FormSection />
+      </div>
       <div className="flex items-center justify-center py-6 text-sm text-textLighter">
         © FaveIT 2025
       </div>

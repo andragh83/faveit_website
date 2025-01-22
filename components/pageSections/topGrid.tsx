@@ -49,7 +49,7 @@ export default function TopGrid() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div id="top-grid" className={styles.container}>
       {/* Desktop Grid */}
       <div className={`${styles.desktopGrid} animate-gridLoad`}>
         {images.map((src, index) => (
