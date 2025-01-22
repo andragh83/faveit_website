@@ -7,17 +7,17 @@ import styles from "./Nav.module.css";
 export default function Navigation() {
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  const changeNav = () => {
-    const topGridHeight =
-      document?.getElementById("top-grid")?.offsetHeight ?? 0;
-
-    setHasScrolled(window.scrollY > topGridHeight);
-  };
-
   useEffect(() => {
-    const handleScroll = () => changeNav();
-    document.addEventListener("scroll", handleScroll);
-    return () => document.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const topGridHeight =
+        document?.getElementById("top-grid")?.offsetHeight ?? 0;
+      setHasScrolled(window.scrollY > topGridHeight);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {

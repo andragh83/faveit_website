@@ -1,34 +1,52 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./Pains.module.css";
 import pain1 from "@/public/images/painsImages/1.jpg";
 import pain2 from "@/public/images/painsImages/2.jpg";
 import pain3 from "@/public/images/painsImages/3.jpg";
+import { Language } from "@/lib/translations";
 
-const pains = [
+const pains = (lang: Language | undefined) => [
   {
     image: pain1,
-    title: "Duplicate Gifts",
-    description: "No more awkward gift duplicates at special occasions",
+    title: lang === "ro" ? "Cadouri Duplicate" : "Duplicate Gifts",
+    description:
+      lang === "ro"
+        ? "Te-ai săturat să primești cadouri neinspirate?"
+        : "No more awkward gift duplicates at special occasions",
   },
   {
     image: pain2,
-    title: "Gift Uncertainty",
-    description: "End the guessing game of what others truly want",
+    title: lang === "ro" ? "Incertitudine" : "Gift Uncertainty",
+    description:
+      lang === "ro"
+        ? "Vrei să scapi de dilema și efortul alegerii cadoului potrivit?"
+        : "End the guessing game of what others truly want",
   },
   {
     image: pain3,
-    title: "Wasted Money",
-    description: "Ensure every gift is wanted and appreciated",
+    title: lang === "ro" ? "Banii aruncați" : "Wasted Money",
+    description:
+      lang === "ro"
+        ? "Asigură-te că fiecare cadou este dorit și apreciat"
+        : "Ensure every gift is wanted and appreciated",
   },
 ];
 
-export default function Pains() {
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+export default function Pains({ lang }: { lang: Language | undefined }) {
+  const [mounted, setMounted] = useState(false);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
+
+  // Initialize on mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -47,17 +65,17 @@ export default function Pains() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [mounted]);
 
-  return (
+  return mounted ? (
     <section className={styles.container}>
       <div className={styles.grid}>
-        {pains.map((pain, index) => (
+        {pains(lang).map((pain, index) => (
           <div
             key={pain.title}
             className={styles.card}
             ref={(el) => {
-              cardsRef.current[index] = el;
+              if (el) cardsRef.current[index] = el;
             }}
           >
             <div className={styles.imageWrapper}>
@@ -76,5 +94,7 @@ export default function Pains() {
         ))}
       </div>
     </section>
+  ) : (
+    <div />
   );
 }

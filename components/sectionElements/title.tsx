@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Title.module.css";
 
 interface TitleProps {
@@ -12,8 +12,15 @@ interface TitleProps {
 
 export default function SectionTitle({ title, image, imageAlt }: TitleProps) {
   const titleRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -30,9 +37,9 @@ export default function SectionTitle({ title, image, imageAlt }: TitleProps) {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [mounted]);
 
-  return (
+  return mounted ? (
     <div ref={titleRef} className={styles.container}>
       <div className={styles.imageWrapper}>
         <Image
@@ -45,5 +52,7 @@ export default function SectionTitle({ title, image, imageAlt }: TitleProps) {
       </div>
       <h2 className={styles.title}>{title}</h2>
     </div>
+  ) : (
+    <div />
   );
 }

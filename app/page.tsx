@@ -11,38 +11,58 @@ import {
 } from "@/components/localData/featuresData";
 import Feature from "@/components/pageSections/feature";
 import Navigation from "@/components/navigation/nav";
-import Link from "next/link";
 import FindOutMore from "@/components/navigation/findOutMore";
+import LanguageSelector from "@/components/navigation/languageSelector";
+import { getTranslations } from "@/lib/getTranslations";
+import { Language } from "@/lib/translations";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const langSearchParam = (await searchParams).lang;
+  const lang = langSearchParam
+    ? typeof langSearchParam === "string"
+      ? langSearchParam
+      : langSearchParam[0]
+    : "en";
+
+  const t =
+    lang && lang === "ro" ? getTranslations("ro") : getTranslations("en");
+
   return (
     <div id="top-page" className="relative overflow-x-hidden">
+      <div className="fixed bottom-4 md:bottom-auto md:top-4 right-4 z-[51]">
+        <LanguageSelector lang={lang as Language} />
+      </div>
       <TopGrid />
       <Navigation />
 
       {/* Hero Content */}
       <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none">
         <div className="max-w-2xl text-center px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-baseText">
-            Create Your Perfect Gift Registry
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mb-6 text-baseText">
+            {t.hero.title}
           </h1>
           <p className="text-lg md:text-xl mb-8 text-baseText/80 max-w-xl mx-auto">
-            Share your wishlist with friends and family. Make gift-giving
-            simple, meaningful, and organized.
+            {t.hero.subtitle1}
+            <br />
+            {t.hero.subtitle2}
           </p>
-          <FindOutMore />
+          <FindOutMore text={t.hero.cta} />
         </div>
       </div>
       <div id="pains">
-        <Pains />
+        <Pains lang={lang as Language} />
       </div>
       <div id="wishlists">
         <SectionTitle
-          title="Keep all your wishlists in one place."
+          title={t.sections.wishlists}
           image={wishlists}
           imageAlt="Wishlists"
         />
-        {wishlistFeaturesData.map((feature, i) => (
+        {wishlistFeaturesData(lang as Language).map((feature, i) => (
           <Feature
             key={feature.title}
             feature={feature}
@@ -53,11 +73,11 @@ export default function Home() {
       </div>
       <div id="gifts">
         <SectionTitle
-          title="Find the perfect gift for your friends and loved ones!"
+          title={t.sections.gifts}
           image={gifts}
-          imageAlt="Gifts"
+          imageAlt={t.sections.gifts}
         />
-        {giftsFeaturesData.map((feature, i) => (
+        {giftsFeaturesData(lang as Language).map((feature, i) => (
           <Feature
             key={feature.title}
             feature={feature}
@@ -67,10 +87,10 @@ export default function Home() {
         ))}
       </div>
       <div id="dev">
-        <DeveloperSection />
+        <DeveloperSection lang={lang as Language} />
       </div>
       <div id="contact">
-        <FormSection />
+        <FormSection lang={lang as Language} />
       </div>
       <div className="flex items-center justify-center py-6 text-sm text-textLighter">
         © FaveIT 2025

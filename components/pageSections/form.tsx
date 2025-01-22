@@ -8,8 +8,9 @@ import styles from "./Form.module.css";
 import { Spinner } from "@/components/ui/spinner";
 import CheckCircle from "../icons/checkCircle";
 import Error from "../icons/error";
+import { Language } from "@/lib/translations";
 
-const FormSection: FC = () => {
+const FormSection: FC<{ lang: Language | undefined }> = ({ lang }) => {
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -22,7 +23,7 @@ const FormSection: FC = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, lang }),
     });
 
     const data = await response.json();
@@ -54,9 +55,17 @@ const FormSection: FC = () => {
       }
     } else {
       if (!email) {
-        setInputError("Please enter your email address.");
+        setInputError(
+          lang === "ro"
+            ? "Vă rugăm să introduceți adresa de email."
+            : "Please enter your email address."
+        );
       } else {
-        setInputError("Please enter a valid email address.");
+        setInputError(
+          lang === "ro"
+            ? "Vă rugăm să introduceți o adresă de email validă."
+            : "Please enter a valid email address."
+        );
       }
     }
   };
@@ -81,7 +90,9 @@ const FormSection: FC = () => {
             <div className={`flex items-center gap-4 ${styles.fadeIn}`}>
               <CheckCircle />
               <h3 className="text-lg md:text-xl text-baseText">
-                Thank you for subscribing!
+                {lang === "ro"
+                  ? "Vă mulțumim că v-ați abonat!"
+                  : "Thank you for subscribing!"}
               </h3>
             </div>
           </div>
@@ -93,7 +104,9 @@ const FormSection: FC = () => {
               <div className="flex items-center gap-4">
                 <Error color="var(--error)" />
                 <p className="text-md md:text-lg text-baseText ">
-                  There was an error subscribing. Please try again.
+                  {lang === "ro"
+                    ? "A apărut o eroare la abonare. Vă rugăm să încercați din nou."
+                    : "There was an error subscribing. Please try again."}
                 </p>
               </div>
               <button
@@ -113,15 +126,15 @@ const FormSection: FC = () => {
           <div className="flex flex-col items-center text-center">
             {/* Main Content */}
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-baseText">
-              Stay Updated
+              {lang === "ro" ? "Rămâi la curent" : "Stay Updated"}
             </h2>
             <p className="text-md md:text-lg text-textLighter mb-1 max-w-lg">
-              {
-                "Subscribe below if you'd like to be notified when we launch FaveIT."
-              }
+              {lang === "ro"
+                ? "Abonează-te mai jos dacă dorești să fii notificat când lansăm FaveIT și când poți să începi să-l folosești."
+                : "Subscribe below if you'd like to be notified when we launch FaveIT and when you can start using it."}
             </p>
             <p className="text-md md:text-lg text-textLighter mb-8 max-w-xl">
-              No spam. We promise!
+              {lang === "ro" ? "Promitem, fără spam!" : "We promise no spam!"}
             </p>
 
             {/* Form */}
@@ -129,7 +142,11 @@ const FormSection: FC = () => {
               <form className="flex flex-col md:flex-row gap-4">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={
+                    lang === "ro"
+                      ? "Introduceți-vă adresa de email"
+                      : "Enter your email"
+                  }
                   className="flex-1 px-4 py-3 rounded-lg bg-background/80 border border-textLighter/20 
                           text-baseText placeholder-textLighter/50 focus:outline-none focus:ring-2 
                           focus:ring-textLighter/30"
@@ -153,6 +170,8 @@ const FormSection: FC = () => {
                 >
                   {isLoading ? (
                     <Spinner size="tiny" label="Subscribing" />
+                  ) : lang === "ro" ? (
+                    "Abonare"
                   ) : (
                     "Subscribe"
                   )}
@@ -162,7 +181,9 @@ const FormSection: FC = () => {
 
             {/* Social Links */}
             <div className="flex flex-col items-center gap-4">
-              <p className="text-baseText text-lg">Follow us on</p>
+              <p className="text-baseText text-lg">
+                {lang === "ro" ? "Urmăriți-ne pe" : "Follow us on"}
+              </p>
               <div className="flex items-center justify-center gap-6">
                 <a
                   href="https://x.com/faveitapp"

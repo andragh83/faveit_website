@@ -1,7 +1,12 @@
 "use client";
 
-export default function FindOutMore() {
-  const scrollToPains = () => {
+interface FindOutMoreProps {
+  text: string;
+}
+
+export default function FindOutMore({ text }: FindOutMoreProps) {
+  const scrollToPains = (e: React.MouseEvent) => {
+    e.preventDefault();
     const element = document.getElementById("pains");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -15,7 +20,7 @@ export default function FindOutMore() {
         px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity
         transform hover:scale-105 duration-200 pointer-events-auto"
     >
-      Find out more
+      {text}
     </button>
   );
 }

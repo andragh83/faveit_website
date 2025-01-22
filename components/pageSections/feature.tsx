@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import styles from "./Feature.module.css";
 import { generateIcon } from "../icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CheckCircle from "../icons/checkCircle";
 
 interface FeatureItem {
@@ -28,10 +28,19 @@ export default function Feature({
   const featureRef = useRef<HTMLElement>(null);
   const contentOrder = textPosition === "left" ? "md:order-1" : "md:order-2";
   const imagesOrder = textPosition === "left" ? "md:order-2" : "md:order-1";
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const slideDirection =
     textPosition === "left" ? styles.slideFromLeft : styles.slideFromRight;
 
   useEffect(() => {
+    if (!mounted) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -48,9 +57,9 @@ export default function Feature({
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [mounted]);
 
-  return (
+  return mounted ? (
     <section
       ref={featureRef}
       className={`${styles.container} ${
@@ -99,5 +108,7 @@ export default function Feature({
         </div>
       </div>
     </section>
+  ) : (
+    <div />
   );
 }

@@ -6,11 +6,16 @@ const mailerlite = new MailerLite({
 });
 
 export async function POST(request: NextRequest) {
-  const { email } = await request.json();
+  const { email, lang } = await request.json();
 
   const payload = {
     email: email,
-    groups: [process.env.MAILERLITE_GROUP_ID || ""],
+    groups: [
+      process.env.MAILERLITE_GROUP_ID || "",
+      lang && lang === "ro"
+        ? process.env.MAILERLITE_GROUP_ID_RO || ""
+        : process.env.MAILERLITE_GROUP_ID_EN || "",
+    ],
     status: "unconfirmed" as
       | "unconfirmed"
       | "active"
