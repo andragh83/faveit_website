@@ -65,7 +65,7 @@ export default function Pains({ lang }: { lang: Language | undefined }) {
     });
 
     return () => observer.disconnect();
-  }, [mounted]);
+  }, [mounted, lang]);
 
   return mounted ? (
     <section className={styles.container}>
