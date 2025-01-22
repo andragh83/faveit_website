@@ -12,9 +12,7 @@ export async function POST(request: NextRequest) {
     email: email,
     groups: [
       process.env.MAILERLITE_GROUP_ID || "",
-      lang && lang === "ro"
-        ? process.env.MAILERLITE_GROUP_ID_RO || ""
-        : process.env.MAILERLITE_GROUP_ID_EN || "",
+      lang && lang === "ro" ? "112108053904491964" : "112108046257227192",
     ],
     status: "unconfirmed" as
       | "unconfirmed"
