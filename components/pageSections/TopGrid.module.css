@@ -85,7 +85,7 @@
   }
 
   .mobileImage .image {
-    animation: fadeIn 5s ease;
+    animation: fadeInOut 5s ease infinite;
   }
 }
 
@@ -95,6 +95,18 @@
   }
   to {
     opacity: 0.5;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

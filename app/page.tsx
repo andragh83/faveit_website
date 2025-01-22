@@ -1,5 +1,3 @@
-"use client";
-
 import DeveloperSection from "@/components/pageSections/developer";
 import FormSection from "@/components/pageSections/form";
 import TopGrid from "@/components/pageSections/topGrid";
@@ -14,6 +12,7 @@ import {
 import Feature from "@/components/pageSections/feature";
 import Navigation from "@/components/navigation/nav";
 import Link from "next/link";
+import FindOutMore from "@/components/navigation/findOutMore";
 
 export default function Home() {
   return (
@@ -24,24 +23,19 @@ export default function Home() {
       {/* Hero Content */}
       <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none">
         <div className="max-w-2xl text-center px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#343434] dark:text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-baseText">
             Create Your Perfect Gift Registry
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-[#343434]/80 dark:text-white/80 max-w-xl mx-auto">
+          <p className="text-lg md:text-xl mb-8 text-baseText/80 max-w-xl mx-auto">
             Share your wishlist with friends and family. Make gift-giving
             simple, meaningful, and organized.
           </p>
-          <Link
-            href="/create"
-            className="inline-block bg-[#343434] dark:bg-white text-white dark:text-[#343434] 
-              px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity
-              transform hover:scale-105 duration-200 pointer-events-auto"
-          >
-            Start Your Wishlist
-          </Link>
+          <FindOutMore />
         </div>
       </div>
-      <Pains />
+      <div id="pains">
+        <Pains />
+      </div>
       <div id="wishlists">
         <SectionTitle
           title="Keep all your wishlists in one place."
