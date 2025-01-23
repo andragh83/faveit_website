@@ -43,9 +43,9 @@ export const wishlistFeaturesData = (lang: Language | undefined) => [
         ? "Grupează-ți FAVE-urile in colecții pentru a te organiza mai bine"
         : "Add your FAVEs to collections for easier browsing and to stay organised",
       lang === "ro"
-        ? "Numește-ți colecțiile după cum dorești"
+        ? "Denumește-ți colecțiile după cum dorești"
         : "Name your collections meaningfully",
-      lang === "ro" ? "Editați colecțiile" : "Edit your collections",
+      lang === "ro" ? "Editează-ți colecțiile" : "Edit your collections",
     ],
     screenshots: [collections_1, collections_2, collections_3],
   },

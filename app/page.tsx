@@ -31,6 +31,8 @@ export default async function Home({
   const t =
     lang && lang === "ro" ? getTranslations("ro") : getTranslations("en");
 
+  // console.log("Rendering Home");
+
   return (
     <div id="top-page" className="relative overflow-x-hidden">
       <div className="fixed bottom-4 md:bottom-auto md:top-4 right-4 z-[51]">

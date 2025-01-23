@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
 
 export default function Navigation() {
+  // console.log("Rendering Navigation");
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {

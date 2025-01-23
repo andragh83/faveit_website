@@ -26,6 +26,7 @@ export default function LanguageSelector({
 }: {
   lang: Language | undefined;
 }) {
+  // console.log("Rendering LanguageSelector");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,7 @@ export default function LanguageSelector({
   const currentLang = lang || "en";
   const currentLanguage = languageObject[currentLang];
 
-  return mounted ? (
+  return (
     <div className="relative" ref={dropdownRef}>
       {isOpen && (
         <div
@@ -107,7 +108,5 @@ export default function LanguageSelector({
         </span>
       </button>
     </div>
-  ) : (
-    <div />
   );
 }

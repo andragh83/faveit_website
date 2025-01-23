@@ -25,6 +25,7 @@ export default function Feature({
   textPosition,
   hasBackground = false,
 }: FeatureProps) {
+  // console.log("Rendering Feature");
   const featureRef = useRef<HTMLElement>(null);
   const contentOrder = textPosition === "left" ? "md:order-1" : "md:order-2";
   const imagesOrder = textPosition === "left" ? "md:order-2" : "md:order-1";
@@ -59,7 +60,7 @@ export default function Feature({
     return () => observer.disconnect();
   }, [mounted]);
 
-  return mounted ? (
+  return (
     <section
       ref={featureRef}
       className={`${styles.container} ${
@@ -108,7 +109,5 @@ export default function Feature({
         </div>
       </div>
     </section>
-  ) : (
-    <div />
   );
 }

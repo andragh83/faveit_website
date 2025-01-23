@@ -5,6 +5,7 @@ interface FindOutMoreProps {
 }
 
 export default function FindOutMore({ text }: FindOutMoreProps) {
+  // console.log("Rendering FindOutMore");
   const scrollToPains = (e: React.MouseEvent) => {
     e.preventDefault();
     const element = document.getElementById("pains");

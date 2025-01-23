@@ -64,7 +64,7 @@ export const translations = {
       intro:
         "Mă bucur că ești aici și că proiectul meu ți-a trezit curiozitatea! Am creat FaveIT pentru a rezolva o nevoie cu care m-am confruntat eu însămi de-a lungul timpului și sper că vei găsi și tu o utilitate pentru el!",
       story:
-        "Mereu mi-a fost greu să aleg ce să cumpăr pentru cei dragi, pentru prieteni și pentru oricine, de fapt. De ceva timp încoace, am devenit convinsă că tehnologia ar putea rezolva ușor această problemă așa că per să te bucuri de FaveIT și să te ajute să primeși și să oferi cadori memorabile!",
+        "Mereu mi-a fost greu să aleg ce să cumpăr pentru cei dragi, pentru prieteni și pentru oricine, de fapt. De ceva timp încoace, am devenit convinsă că tehnologia ar putea rezolva ușor această problemă așa că sper să te bucuri de FaveIT și să te ajute să primeși și să oferi cadori memorabile!",
     },
   },
 };

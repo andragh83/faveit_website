@@ -7,35 +7,46 @@ import pain1 from "@/public/images/painsImages/1.jpg";
 import pain2 from "@/public/images/painsImages/2.jpg";
 import pain3 from "@/public/images/painsImages/3.jpg";
 import { Language } from "@/lib/translations";
+import { getTranslations } from "@/lib/getTranslations";
 
 const pains = (lang: Language | undefined) => [
   {
     image: pain1,
-    title: lang === "ro" ? "Cadouri Duplicate" : "Duplicate Gifts",
+    title:
+      lang === "ro"
+        ? getTranslations("ro").pains.duplicate.title
+        : getTranslations("en").pains.duplicate.title,
     description:
       lang === "ro"
-        ? "Te-ai săturat să primești cadouri neinspirate?"
-        : "No more awkward gift duplicates at special occasions",
+        ? getTranslations("ro").pains.duplicate.description
+        : getTranslations("en").pains.duplicate.description,
   },
   {
     image: pain2,
-    title: lang === "ro" ? "Incertitudine" : "Gift Uncertainty",
+    title:
+      lang === "ro"
+        ? getTranslations("ro").pains.uncertainty.title
+        : getTranslations("en").pains.uncertainty.title,
     description:
       lang === "ro"
-        ? "Vrei să scapi de dilema și efortul alegerii cadoului potrivit?"
-        : "End the guessing game of what others truly want",
+        ? getTranslations("ro").pains.uncertainty.description
+        : getTranslations("en").pains.uncertainty.description,
   },
   {
     image: pain3,
-    title: lang === "ro" ? "Banii aruncați" : "Wasted Money",
+    title:
+      lang === "ro"
+        ? getTranslations("ro").pains.waste.title
+        : getTranslations("en").pains.waste.title,
     description:
       lang === "ro"
-        ? "Asigură-te că fiecare cadou este dorit și apreciat"
-        : "Ensure every gift is wanted and appreciated",
+        ? getTranslations("ro").pains.waste.description
+        : getTranslations("en").pains.waste.description,
   },
 ];
 
 export default function Pains({ lang }: { lang: Language | undefined }) {
+  // console.log("Rendering Pains");
   const [mounted, setMounted] = useState(false);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -67,7 +78,7 @@ export default function Pains({ lang }: { lang: Language | undefined }) {
     return () => observer.disconnect();
   }, [mounted, lang]);
 
-  return mounted ? (
+  return (
     <section className={styles.container}>
       <div className={styles.grid}>
         {pains(lang).map((pain, index) => (
@@ -83,6 +94,7 @@ export default function Pains({ lang }: { lang: Language | undefined }) {
                 src={pain.image}
                 alt={pain.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className={styles.image}
               />
             </div>
@@ -94,7 +106,5 @@ export default function Pains({ lang }: { lang: Language | undefined }) {
         ))}
       </div>
     </section>
-  ) : (
-    <div />
   );
 }

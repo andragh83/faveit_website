@@ -11,6 +11,7 @@ import Error from "../icons/error";
 import { Language } from "@/lib/translations";
 
 const FormSection: FC<{ lang: Language | undefined }> = ({ lang }) => {
+  // console.log("Rendering FormSection");
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);

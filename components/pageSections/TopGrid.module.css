@@ -1,6 +1,6 @@
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   position: relative;
 }
 
@@ -47,21 +47,9 @@
 
 .mobileImage {
   display: none;
+  height: 100dvh;
+  width: 100dvw;
   position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-.mobileImage::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--primary-light);
-  opacity: 0.7;
-  z-index: 1;
 }
 
 /* Tablet styles */
@@ -80,8 +68,18 @@
 
   .mobileImage {
     display: block;
-    height: 100vh;
-    width: 100vw;
+  }
+
+  .mobileImage::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary-light);
+    opacity: 0.7;
+    z-index: 1;
   }
 
   .mobileImage .image {

@@ -38,14 +38,17 @@ const images = [
 ];
 
 export default function TopGrid() {
+  // console.log("Rendering TopGrid");
   const [currentMobileImage, setCurrentMobileImage] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentMobileImage((prev) => (prev + 1) % images.length);
-    }, 5000);
+    if (window.innerWidth < 768) {
+      const interval = setInterval(() => {
+        setCurrentMobileImage((prev) => (prev + 1) % images.length);
+      }, 5000);
 
-    return () => clearInterval(interval);
+      return () => clearInterval(interval);
+    }
   }, []);
 
   return (

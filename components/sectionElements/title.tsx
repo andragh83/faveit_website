@@ -11,6 +11,7 @@ interface TitleProps {
 }
 
 export default function SectionTitle({ title, image, imageAlt }: TitleProps) {
+  // console.log("Rendering SectionTitle");
   const titleRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -39,20 +40,19 @@ export default function SectionTitle({ title, image, imageAlt }: TitleProps) {
     return () => observer.disconnect();
   }, [mounted]);
 
-  return mounted ? (
+  return (
     <div ref={titleRef} className={styles.container}>
       <div className={styles.imageWrapper}>
         <Image
           src={image}
           alt={imageAlt}
           fill
+          sizes="100vw"
           className={styles.image}
           priority
         />
       </div>
       <h2 className={styles.title}>{title}</h2>
     </div>
-  ) : (
-    <div />
   );
 }
