@@ -104,6 +104,9 @@
 }
 
 @media (max-width: 768px) {
+  .screenshot {
+    border-radius: 1rem;
+  }
   .header {
     flex-direction: column;
     text-align: center;
