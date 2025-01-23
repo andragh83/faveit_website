@@ -14,7 +14,87 @@ import Navigation from "@/components/navigation/nav";
 import FindOutMore from "@/components/navigation/findOutMore";
 import LanguageSelector from "@/components/navigation/languageSelector";
 import { getTranslations } from "@/lib/getTranslations";
-import { Language } from "@/lib/translations";
+import { Language, translations } from "@/lib/translations";
+import { ResolvingMetadata, Metadata } from "next";
+
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata(
+  { searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const langSearchParam = (await searchParams)?.lang;
+  console.log("langSearchParam", langSearchParam);
+  const lang = langSearchParam
+    ? typeof langSearchParam === "string"
+      ? langSearchParam
+      : langSearchParam[0]
+    : "en";
+  const t = translations[lang as Language];
+
+  console.log("lang", lang);
+
+  return {
+    title:
+      "FaveIT - " +
+      (lang === "ro"
+        ? "Lista ta perfectă de dorințe"
+        : "Your Perfect Gift Registry"),
+    description: t.hero.subtitle1 + " " + t.hero.subtitle2,
+    keywords: [
+      lang === "ro"
+        ? "listă de dorințe, cadouri, organizare cadouri, management cadouri, cadouri sociale"
+        : "gift registry, wishlist, gift giving, gift organization, gift management, social gifting",
+    ],
+    authors: [{ name: "FaveIT" }],
+    openGraph: {
+      title:
+        "FaveIT - " +
+        (lang === "ro"
+          ? "Lista ta perfectă de dorințe"
+          : "Your Perfect Gift Registry"),
+      description: t.hero.subtitle1 + " " + t.hero.subtitle2,
+      type: "website",
+      siteName: "FaveIT",
+      images: [
+        {
+          url: "/images/faveit-logo.jpg",
+          width: 800,
+          height: 600,
+          alt: "FaveIT Logo",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        "FaveIT - " +
+        (lang === "ro"
+          ? "Lista ta perfectă de dorințe"
+          : "Your Perfect Gift Registry"),
+      description: t.hero.subtitle1 + " " + t.hero.subtitle2,
+      creator: "@faveitapp",
+      images: [
+        {
+          url: "/images/faveit-logo.jpg",
+          width: 800,
+          height: 600,
+          alt: "FaveIT Logo",
+        },
+      ],
+    },
+    alternates: {
+      canonical: "/",
+      languages: {
+        "en-US": "/?lang=en",
+        "ro-RO": "/?lang=ro",
+      },
+    },
+  };
+}
 
 export default async function Home({
   searchParams,
