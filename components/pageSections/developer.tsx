@@ -27,7 +27,7 @@ const DeveloperSection: FC<{ lang: Language | undefined }> = ({ lang }) => {
           {t.dev.greeting}
         </h2>
         <div className="flex flex-col gap-4 mb-8 max-w-xl">
-          <p className="text-lg md:text-xl text-textLighter ">{t.dev.intro}</p>
+          <p className="text-md md:text-lg text-textLighter ">{t.dev.intro}</p>
           <p className="text-md md:text-lg text-textLighter">{t.dev.story}</p>
         </div>
 

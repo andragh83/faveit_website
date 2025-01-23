@@ -3,8 +3,9 @@
 import Logo from "@/components/icons/logo";
 import { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
+import { Language } from "@/lib/translations";
 
-export default function Navigation() {
+export default function Navigation({ lang }: { lang: Language | undefined }) {
   // console.log("Rendering Navigation");
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -46,13 +47,13 @@ export default function Navigation() {
           onClick={() => scrollToSection("wishlists")}
           className="uppercase text-baseText hover:opacity-70 transition-opacity text-xs md:text-base"
         >
-          Wishlists
+          {lang === "ro" ? "Dorește" : "Wishlists"}
         </button>
         <button
           onClick={() => scrollToSection("gifts")}
           className="uppercase text-baseText hover:opacity-70 transition-opacity text-xs md:text-base"
         >
-          Give
+          {lang === "ro" ? "Oferă" : "Give"}
         </button>
         <button onClick={scrollToTop}>
           <Logo size={80} />

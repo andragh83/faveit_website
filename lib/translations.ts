@@ -2,7 +2,8 @@ export const translations = {
   en: {
     hero: {
       title: "Create Your Perfect Gift Registry",
-      subtitle1: "Share your wishlist with friends and family.",
+      subtitle1:
+        "Share your wishlist with friends and family or with anyone else you choose to.",
       subtitle2: "Make gift-giving simple, meaningful, and organized.",
       cta: "Find out more",
     },
@@ -35,15 +36,16 @@ export const translations = {
   ro: {
     hero: {
       title: "Creează-ți lista perfectă de dorințe",
-      subtitle1: "Oferă întotdeauna cadoul potrivit.",
-      subtitle2: "Primește întotdeauna ce ți-ai dorit.",
+      subtitle1:
+        "Împărtășește-o cu prietenii, familia sau cu oricine altcineva dorești.",
+      subtitle2:
+        "Oferă întotdeauna cadoul potrivit. Primește întotdeauna ce ți-ai dorit.",
       cta: "Află mai multe",
     },
     pains: {
       duplicate: {
         title: "Cadouri neinspirate",
-        description:
-          "Te-ai săturat să primești cadouri neinspirate și să te prefaci că-ți plac?",
+        description: "Te-ai săturat să primești cadouri neinspirate?",
       },
       uncertainty: {
         title: "Incertitudine",

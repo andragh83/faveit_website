@@ -27,15 +27,13 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const langSearchParam = (await searchParams)?.lang;
-  console.log("langSearchParam", langSearchParam);
+
   const lang = langSearchParam
     ? typeof langSearchParam === "string"
       ? langSearchParam
       : langSearchParam[0]
     : "en";
   const t = translations[lang as Language];
-
-  console.log("lang", lang);
 
   return {
     title:
@@ -46,8 +44,8 @@ export async function generateMetadata(
     description: t.hero.subtitle1 + " " + t.hero.subtitle2,
     keywords: [
       lang === "ro"
-        ? "listă de dorințe, cadouri, organizare cadouri, management cadouri, cadouri sociale"
-        : "gift registry, wishlist, gift giving, gift organization, gift management, social gifting",
+        ? "listă de dorințe, cadouri, organizare cadouri, management cadouri, cadouri sociale, evenimente, cadouri evenimente, evenimente cadouri, prieteni, cadouri prieteni, evenimente cadouri prieteni, sf valentin, cadouri sf valentin, evenimente cadouri sf valentin, craciun, iepurasul de paste, cadouri iepurasul de paste, evenimente cadouri iepurasul de paste"
+        : "gift registry, wishlist, gift giving, gift organization, gift management, social gifting, events, event gifts, event gift registry, friends, friend gifts, event friend gifts, valentine's day, valentine's day gifts, valentine's day gift registry, christmas, easter bunny, easter bunny gifts, christmas gifts",
     ],
     authors: [{ name: "FaveIT" }],
     openGraph: {
@@ -119,15 +117,19 @@ export default async function Home({
         <LanguageSelector lang={lang as Language} />
       </div>
       <TopGrid />
-      <Navigation />
+      <Navigation lang={lang as Language} />
 
       {/* Hero Content */}
-      <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none">
+      <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none pb-6">
         <div className="max-w-2xl text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mb-6 text-baseText">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-baseText/80 max-w-xl mx-auto">
+          <p
+            className={`text-lg md:text-xl mb-8 text-baseText/80 ${
+              lang === "ro" ? "max-w-[27rem]" : "max-w-[30rem]"
+            } mx-auto`}
+          >
             {t.hero.subtitle1}
             <br />
             {t.hero.subtitle2}
