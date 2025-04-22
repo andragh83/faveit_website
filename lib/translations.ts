@@ -1,10 +1,10 @@
 export const translations = {
   en: {
     hero: {
-      title: "Create Your Perfect Gift Registry",
-      subtitle1:
-        "Share your wishlist with friends and family or with anyone else you choose to.",
-      subtitle2: "Make gift-giving simple, meaningful, and organized.",
+      title: "The Social Network for Fulfilled Wishes",
+      subtitle1: "Keep all your wishlist in one place.",
+      subtitle2:
+        "Share them with your friends and make gift-giving meaningful.",
       cta: "Find out more",
     },
     pains: {
@@ -35,11 +35,10 @@ export const translations = {
   },
   ro: {
     hero: {
-      title: "Creează-ți lista perfectă de dorințe",
-      subtitle1:
-        "Împărtășește-o cu prietenii, familia sau cu oricine altcineva dorești.",
+      title: "Aplicația de Socializare pentru Dorințe Împlinite",
+      subtitle1: "Păstrează listele de dorințe într-un singur loc.",
       subtitle2:
-        "Oferă întotdeauna cadoul potrivit. Primește întotdeauna ce ți-ai dorit.",
+        "Împărtășește-le cu prietenii și oferă cadouri dorite și cu impact.",
       cta: "Află mai multe",
     },
     pains: {

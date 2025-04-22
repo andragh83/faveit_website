@@ -121,14 +121,12 @@ export default async function Home({
 
       {/* Hero Content */}
       <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none pb-6">
-        <div className="max-w-2xl text-center px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mb-6 text-baseText">
+        <div className="max-w-[400px] md:max-w-[600px] lg:max-w-3xl text-center px-4">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl leading-snug font-bold mb-6 text-baseText">
             {t.hero.title}
           </h1>
           <p
-            className={`text-lg md:text-xl mb-8 text-baseText/80 ${
-              lang === "ro" ? "max-w-[27rem]" : "max-w-[30rem]"
-            } mx-auto`}
+            className={`text-md md:text-xl mb-8 text-baseText/80 max-w-[260px] md:max-w-[80%] mx-auto`}
           >
             {t.hero.subtitle1}
             <br />
