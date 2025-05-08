@@ -2,7 +2,7 @@ export const translations = {
   en: {
     hero: {
       title: "The Social Network for Fulfilled Wishes",
-      subtitle1: "Keep all your wishlist in one place.",
+      subtitle1: "Keep all your wishlists in one place.",
       subtitle2:
         "Share them with your friends and make gift-giving meaningful.",
       cta: "Find out more",
