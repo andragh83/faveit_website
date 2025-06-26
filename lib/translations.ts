@@ -1,10 +1,10 @@
 export const translations = {
   en: {
     hero: {
-      title: "The Social Network for Fulfilled Wishes",
+      title: "The App for Your Wishes",
       subtitle1: "Keep all your wishlists in one place.",
       subtitle2:
-        "Share them with your friends and make gift-giving meaningful.",
+        "Share them with your friends and always give or receive what you've wished for.",
       cta: "Find out more",
     },
     pains: {
@@ -35,10 +35,10 @@ export const translations = {
   },
   ro: {
     hero: {
-      title: "Aplicația de Socializare pentru Dorințe Împlinite",
-      subtitle1: "Păstrează listele de dorințe într-un singur loc.",
+      title: "Aplicația Dorințelor Tale",
+      subtitle1: "Păstrează-ți wishlist-urile într-un singur loc.",
       subtitle2:
-        "Împărtășește-le cu prietenii și oferă cadouri dorite și cu impact.",
+        "Partajează-le cu prietenii și oferă sau primește cadouri dorite.",
       cta: "Află mai multe",
     },
     pains: {
