@@ -1,0 +1,26 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "VH5LS26Q72.com.faveitapp",
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches any URL and allows it to be opened as a universal link."
+          }
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "VH5LS26Q72.com.faveitapp"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "VH5LS26Q72.com.faveitapp"
+    ]
+  }
+}
