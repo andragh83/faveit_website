@@ -36,11 +36,7 @@ export async function generateMetadata(
   const t = translations[lang as Language];
 
   return {
-    title:
-      "FaveIT - " +
-      (lang === "ro"
-        ? "Lista ta perfectă de dorințe"
-        : "Your Perfect Gift Registry"),
+    title: "FaveIT - " + t.hero.title,
     description: t.hero.subtitle1 + " " + t.hero.subtitle2,
     keywords: [
       lang === "ro"
@@ -49,11 +45,7 @@ export async function generateMetadata(
     ],
     authors: [{ name: "FaveIT" }],
     openGraph: {
-      title:
-        "FaveIT - " +
-        (lang === "ro"
-          ? "Lista ta perfectă de dorințe"
-          : "Your Perfect Gift Registry"),
+      title: "FaveIT - " + t.hero.title,
       description: t.hero.subtitle1 + " " + t.hero.subtitle2,
       type: "website",
       siteName: "FaveIT",
@@ -68,11 +60,7 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title:
-        "FaveIT - " +
-        (lang === "ro"
-          ? "Lista ta perfectă de dorințe"
-          : "Your Perfect Gift Registry"),
+      title: "FaveIT - " + t.hero.title,
       description: t.hero.subtitle1 + " " + t.hero.subtitle2,
       creator: "@faveitapp",
       images: [
@@ -122,13 +110,14 @@ export default async function Home({
       {/* Hero Content */}
       <div className="absolute z-10 top-0 h-screen left-0 right-0 flex items-center justify-center pointer-events-none pb-6">
         <div className="max-w-[400px] md:max-w-[600px] lg:max-w-3xl text-center px-4">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl leading-snug font-bold mb-6 text-baseText">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-baseText max-w-[100%] uppercase mx-auto !leading-tight">
             {t.hero.title}
           </h1>
           <p
-            className={`text-md md:text-xl mb-8 text-baseText/80 max-w-[260px] md:max-w-[80%] mx-auto`}
+            className={`text-md md:text-xl mb-8 text-baseText/80 max-w-[260px] md:max-w-[60%] mx-auto`}
           >
-            {t.hero.subtitle1}
+            <span className="font-bold">{t.hero.subtitle1}</span>
+            <br />
             <br />
             {t.hero.subtitle2}
           </p>

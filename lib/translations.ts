@@ -1,10 +1,10 @@
 export const translations = {
   en: {
     hero: {
-      title: "The App for Your Wishes",
-      subtitle1: "Keep all your wishlists in one place.",
+      title: "You see it, you like it, you FaveIT",
+      subtitle1: "The App for Your Wishes",
       subtitle2:
-        "Share them with your friends and always give or receive what you've wished for.",
+        "Keep all your wishlists in one place and share them with your friends and family.",
       cta: "Find out more",
     },
     pains: {
@@ -35,10 +35,10 @@ export const translations = {
   },
   ro: {
     hero: {
-      title: "Aplicația Dorințelor Tale",
-      subtitle1: "Păstrează-ți wishlist-urile într-un singur loc.",
+      title: "Ai văzut, ti-a plăcut, ai FaveIT!",
+      subtitle1: "Aplicația Dorințelor Tale",
       subtitle2:
-        "Partajează-le cu prietenii și oferă sau primește cadouri dorite.",
+        "Păstrează-ți wishlist-urile într-un singur loc și partajează-le cu prietenii și familia.",
       cta: "Află mai multe",
     },
     pains: {
