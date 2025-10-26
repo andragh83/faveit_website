@@ -296,10 +296,10 @@ export default function PrivacyPageRO() {
             <div className="bg-primaryLight/20 p-6 rounded-lg">
               <p className="text-textLighter mb-2">
                 <a
-                  href="mailto:privacy@andromeda-technologies.com"
+                  href="mailto:privacy@andromeda-technologies.ro"
                   className="text-primary hover:underline"
                 >
-                  privacy[at]andromeda-technologies.com
+                  privacy[at]andromeda-technologies.ro
                 </a>
               </p>
               <p className="text-textLighter mb-2">

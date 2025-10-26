@@ -254,10 +254,10 @@ export default function TermsPageRO() {
             <div className="bg-primaryLight/20 p-6 rounded-lg">
               <p className="text-textLighter mb-2">
                 <a
-                  href="mailto:office@andromeda-technologies.com"
+                  href="mailto:office@andromeda-technologies.ro"
                   className="text-primary hover:underline"
                 >
-                  office[at]andromeda-technologies.com
+                  office[at]andromeda-technologies.ro
                 </a>
               </p>
               <p className="text-textLighter mb-2">
