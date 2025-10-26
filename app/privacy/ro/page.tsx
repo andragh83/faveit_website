@@ -299,7 +299,7 @@ export default function PrivacyPageRO() {
                   href="mailto:privacy@andromeda-technologies.com"
                   className="text-primary hover:underline"
                 >
-                  privacy@andromeda-technologies.com
+                  privacy[at]andromeda-technologies.com
                 </a>
               </p>
               <p className="text-textLighter mb-2">
