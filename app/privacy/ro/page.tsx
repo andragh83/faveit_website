@@ -244,7 +244,12 @@ export default function PrivacyPageRO() {
               9. Confidențialitatea copiilor
             </h2>
             <p className="text-textLighter mb-4">
-              FaveIT nu este destinat copiilor sub vârsta de 4 ani.
+              FaveIT nu este destinat copiilor sub vârsta de 16 ani.
+            </p>
+            <p className="text-textLighter mb-4">
+              Nu culegem date în mod conștient de la copii. Dacă credeți că un
+              copil a furnizat date personale, vă rugăm să ne contactați imediat
+              și să solicitați ștergerea datelor.
             </p>
           </section>
 

@@ -220,7 +220,12 @@ export default function PrivacyPage() {
               9. Children's Privacy
             </h2>
             <p className="text-textLighter mb-4">
-              FaveIT is not intended for children under the age of 4.
+              FaveIT is not intended for children under the age of 16.
+            </p>
+            <p className="text-textLighter mb-4">
+              We do not knowingly collect data from children. If you believe a
+              child has provided personal data, please contact us immediately
+              and request the deletion of the data.
             </p>
           </section>
 
