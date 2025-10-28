@@ -18,7 +18,7 @@ export default function FindOutMore({ text }: FindOutMoreProps) {
     <button
       onClick={scrollToPains}
       className="inline-block bg-baseText text-background 
-        px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity
+        px-4 h-12 rounded-lg font-medium hover:opacity-90 transition-opacity
         transform hover:scale-105 duration-200 pointer-events-auto"
     >
       {text}
