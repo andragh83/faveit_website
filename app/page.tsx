@@ -123,13 +123,10 @@ export default async function Home({
             {t.hero.subtitle2}
           </p>
           <div>
-            <a
-              href="https://apps.apple.com/app/faveit/id6753879405"
-              className="w-full flex items-center justify-center gap-4"
-            >
+            <div className="w-full flex items-center justify-center gap-4">
               <FindOutMore text={t.hero.cta} />
               <AppStoreBtn url="https://apps.apple.com/app/faveit/id6753879405" />
-            </a>
+            </div>
           </div>
         </div>
       </div>

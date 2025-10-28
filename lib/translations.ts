@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     hero: {
-      title: "You see it, you like it, you FaveIT",
+      title: "See IT, Love IT, FaveIT",
       subtitle1: "The App for Your Wishes",
       subtitle2:
         "Keep all your wishlists in one place and share them with your friends and family.",
