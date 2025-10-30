@@ -131,8 +131,8 @@ const FormSection: FC<{ lang: Language | undefined }> = ({ lang }) => {
             </h2>
             <p className="text-md md:text-lg text-textLighter mb-1 max-w-lg">
               {lang === "ro"
-                ? "Abonează-te mai jos dacă dorești să fii notificat când lansăm FaveIT și când poți să începi să-l folosești."
-                : "Subscribe below if you'd like to be notified when we launch FaveIT and when you can start using it."}
+                ? "Abonează-te mai jos dacă dorești să primești noutăți despre FaveIT."
+                : "Subscribe below if you'd like to receive news about FaveIT."}
             </p>
             <p className="text-md md:text-lg text-textLighter mb-8 max-w-xl">
               {lang === "ro" ? "Promitem, fără spam!" : "We promise no spam!"}
