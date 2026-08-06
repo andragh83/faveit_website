@@ -28,9 +28,9 @@ export default function AppStoreBtn({ url }: AppStoreBtnProps) {
       <Image
         src="/images/download_appstore.png"
         alt="download from appstore"
-        width={200}
-        height={160}
-        className="h-12 w-auto"
+        width={403}
+        height={135}
+        className="h-12 w-auto block"
       />
     </a>
   );

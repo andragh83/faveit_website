@@ -11,12 +11,13 @@ import {
 } from "@/components/localData/featuresData";
 import Feature from "@/components/pageSections/feature";
 import Navigation from "@/components/navigation/nav";
-import FindOutMore from "@/components/navigation/findOutMore";
 import LanguageSelector from "@/components/navigation/languageSelector";
 import { getTranslations } from "@/lib/getTranslations";
 import { Language, translations } from "@/lib/translations";
 import { ResolvingMetadata, Metadata } from "next";
 import AppStoreBtn from "@/components/navigation/appStoreBtn";
+import PlayStoreBtn from "@/components/navigation/playStoreBtn";
+import ScrollIndicator from "@/components/navigation/scrollIndicator";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -25,7 +26,7 @@ type Props = {
 
 export async function generateMetadata(
   { searchParams }: Props,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const langSearchParam = (await searchParams)?.lang;
 
@@ -121,12 +122,13 @@ export default async function Home({
             {t.hero.subtitle2}
           </p>
           <div>
-            <div className="w-full flex items-center justify-center gap-4">
-              <FindOutMore text={t.hero.cta} />
+            <div className="w-full flex items-center justify-center">
               <AppStoreBtn url="https://apps.apple.com/app/faveit/id6753879405" />
+              <PlayStoreBtn url="https://play.google.com/store/apps/details?id=com.faveitapp" />
             </div>
           </div>
         </div>
+        <ScrollIndicator />
       </div>
       <div id="pains">
         <Pains lang={lang as Language} />

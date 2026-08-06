@@ -19,6 +19,15 @@ export default {
         baseText: "var(--base-text)",
         primaryLighter: "var(--primary-lighter)",
       },
+      keyframes: {
+        "scroll-bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(6px)" },
+        },
+      },
+      animation: {
+        "scroll-bounce": "scroll-bounce 1.6s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
